@@ -14,11 +14,11 @@ integer getRecordCount ($data_set)
 	$result = $modx->db->select('make, model, color, year', 'cars', 'year > 2001');  	$total_rows = $modx->db->getRecordCount( $result );   
 	
 	if( $total_rows >= 1 ) {  
-		$output .= $total_rows . ' машин новіше 2001 року:<br />';  
+		$output .= $total_rows . ' машини новіші 2001 року:<br />';  
 		while( $row = $modx->db->getRow( $result ) ) {  
 			$output .= 'Виробник: ' . $row['make'] . ' | Модель: ' . $row['model'] .  ' | Колір: ' . $row['color'] . ' | Рік: ' . $row['year'] . '<br />';  
 		}  
 	}else{  
-		$output = 'Немає машин новіше 2001 року!';  
+		$output = 'Немає машин новіших 2001 року!';  
 	}  
 	echo $output;
